@@ -11,17 +11,16 @@ public class protobuf : ModuleRules
         
 		PublicSystemIncludePaths.Add(Path.Combine(ModuleDirectory, "include"));
 
-        switch (Target.Platform)
+        if (Target.Platform != UnrealTargetPlatform.Win64)
         {
-            case UnrealTargetPlatform.Win64:
-                PublicLibraryPaths.Add(Path.Combine(ModuleDirectory, "lib", "Win64"));
-                PublicAdditionalLibraries.Add("libprotobuf.lib");
-                break;
-            default:
-                throw new Exception("Unsupported platform " + Target.Platform.ToString());
+            throw new Exception("Unsupported platform " + Target.Platform.ToString());
         }
+
+        PublicLibraryPaths.Add(Path.Combine(ModuleDirectory, "lib", "Win64"));
+        PublicAdditionalLibraries.Add("libprotobuf.lib");
 
         PublicDefinitions.Add("GOOGLE_PROTOBUF_NO_RTTI=1");
     }
+
 }
 
