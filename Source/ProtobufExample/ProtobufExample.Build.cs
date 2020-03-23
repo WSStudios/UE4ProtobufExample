@@ -1,6 +1,7 @@
 // Fill out your copyright notice in the Description page of Project Settings.
 
 using UnrealBuildTool;
+using System.IO;
 
 public class ProtobufExample : ModuleRules
 {
@@ -11,6 +12,10 @@ public class ProtobufExample : ModuleRules
 		PublicDependencyModuleNames.AddRange(new string[] { "Core", "CoreUObject", "Engine", "InputCore" });
 
 		PrivateDependencyModuleNames.AddRange(new string[] { "protobuf" });
+        //PublicDelayLoadDLLs.Add("libprotobuf-lite.dll");
+        //RuntimeDependencies.Add("ThirdParty/protobuf/bin/libprotobuf-lite.dll");
+        RuntimeDependencies.Add("$(TargetOutputDir)/libprotobuf.dll",
+            "$(ProjectDir)/Source/ThirdParty/protobuf/tools/protobuf/libprotobuf.dll");
 
         // Uncomment if you are using Slate UI
         // PrivateDependencyModuleNames.AddRange(new string[] { "Slate", "SlateCore" });
