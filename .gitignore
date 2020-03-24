@@ -72,3 +72,10 @@ Plugins/*/Intermediate/*
 
 # Cache files for the editor to use
 DerivedDataCache/*
+
+# Don't ignore precompiled binaries
+!Source/ThirdParty/**/*.dll
+!Source/ThirdParty/**/*.lib
+!Source/ThirdParty/**/*.so
+!Source/ThirdParty/**/*.a
+!Source/ThirdParty/**/*.la
