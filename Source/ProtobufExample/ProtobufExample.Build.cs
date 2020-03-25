@@ -15,7 +15,9 @@ public class ProtobufExample : ModuleRules
         //PublicDelayLoadDLLs.Add("libprotobuf-lite.dll");
         //RuntimeDependencies.Add("ThirdParty/protobuf/bin/libprotobuf-lite.dll");
         RuntimeDependencies.Add("$(TargetOutputDir)/libprotobuf.dll",
-            "$(ProjectDir)/Source/ThirdParty/protobuf/tools/protobuf/libprotobuf.dll");
+            "$(ProjectDir)/Source/ThirdParty/protobuf/bin/libprotobuf.dll");
+        RuntimeDependencies.Add("$(TargetOutputDir)/libprotobuf.so",
+            "$(ProjectDir)/Source/ThirdParty/protobuf/lib/Linux/libprotobuf.so");
 
         // Uncomment if you are using Slate UI
         // PrivateDependencyModuleNames.AddRange(new string[] { "Slate", "SlateCore" });
