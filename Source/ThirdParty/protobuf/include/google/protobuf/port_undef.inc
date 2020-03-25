@@ -68,9 +68,11 @@
 #undef PROTOBUF_ASSUME
 #undef PROTOBUF_EXPORT_TEMPLATE_DECLARE
 #undef PROTOBUF_EXPORT_TEMPLATE_DEFINE
+#undef PROTOBUF_ALIGNAS
 
 // Restore macro that may have been #undef'd in port_def.inc.
 #ifdef _MSC_VER
+#pragma pop_macro("ERROR")
 #pragma pop_macro("GetMessage")
 #pragma pop_macro("IGNORE")
 #pragma pop_macro("IN")
