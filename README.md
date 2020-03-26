@@ -36,7 +36,7 @@ make check -j32
 make install
 ```
 
-`make -j32` will compiles protobuf. `make check` runs some tests to ensure that protobuf is functioning on your platform. `make install` will copy 
+`make -j32` compiles protobuf. `make check` runs some tests to ensure that protobuf is functioning on your platform. `make install` will copy 
 
 Finally, compile the `UE4ProtobufExample` project:
 ```
@@ -47,7 +47,7 @@ Finally, compile the `UE4ProtobufExample` project:
 If you encounter issues compiling protobuf or the sample project on Linux, I feel bad for you son. Here are some tips:
 
 #### ./configure Errors
-The `./configure ... ` command pounded me with a litany of seemingly nonsensical complaints. When `./configure` fails, it generates a log files `config.log` in the same directory where `./configure` was run. This log contains compile errors or other diagnostic information that can be used to diagnose errors.
+The `./configure ... ` command pounded me with a litany of seemingly nonsensical complaints. When `./configure` fails, it generates a log file, `config.log`, in the same directory where `./configure` was run. This log contains compile errors or other information that can be used to diagnose errors.
 
 #### Understand ./configure Arguments
 Each argument to `./configure` was discovered via much trial, error, and gnashing of teeth. Run `./configure --help` for a cursory overview of the options available. Here's an explainer:
